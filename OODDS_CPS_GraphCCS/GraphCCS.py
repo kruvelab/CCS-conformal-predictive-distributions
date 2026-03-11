@@ -348,7 +348,7 @@ def ion2graph(ion):
     edge_featurizer = BondFeaturizer(bond_data_field='e', self_loop=True)
     fc = partial(mol_to_bigraph, add_self_loop=True)
 
-    ion_type = ion.at['Ion Type']
+    ion_type = ion['Ion Type']
     try:
         ion_graph = fc(
             mol = mol2ion(Chem.MolFromSmiles(ion['Absolute SMILES']), ion_type), 
