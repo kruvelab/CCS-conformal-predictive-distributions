@@ -50,10 +50,6 @@ def MOLstandardizer(molecular_identifier, input_type = 'SMILES'):
             molecule = Chem.MolFromSmiles(molecular_identifier) # generate molecule with sanitizer on
         elif input_type == 'InChI':
             molecule = Chem.MolFromInchi(molecular_identifier) # explicit hydrogens are removed for better computational efficiency
-        else:
-            raise ValueError(
-                'Only {SMILES, InChI} are accepted types of molecular identifiers.'
-            )
         '''
         When reading molecules, it automatically does sanitation (SanitizeMol() is different from the others: 
         it does a small amount of normalization - fixing groups like nitro which are commonly drawn in a
@@ -208,7 +204,7 @@ def construct_graph(molecular_identifiers):
         The atom types are represented as atom attributes of the nodes.
     """
     try:
-        graph =  mol2graph(Chem.MolFromSmiles(molecular_identifiers['Absolute SMILES']))
+        graph =  mol2graph(Chem.MolFromSmiles(molecular_identifiers.SMILES]))
     except Exception:
         try:
             graph = mol2graph(Chem.MolFromInchi(molecular_identifiers.InChI))
