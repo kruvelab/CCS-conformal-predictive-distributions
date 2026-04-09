@@ -2,7 +2,7 @@
 
 **Authors:** Lucas Ferrando Plo and Anneli Kruve
 
-This repository contains the workflow used to obtain **probabilities** and **Continuous Ranked Probability Scores (CRPSs)** for candidate structures in **non-target screening (NTS)**.
+This repository contains the workflow used to obtain **probabilities** and **Continuous Ranked Probability Scores (CRPSs)** for candidate structures in **non-target screening (NTS)** using collision cross-sections.
 
 ## Overview
 
