@@ -156,7 +156,6 @@ def atom2features(atom, mol):
     atom_is_in_ring_encoder.fit([True,False])
     atom_ring = atom_is_in_ring_encoder.transform(atom.IsInRing())
     atom_aromatic = atom_is_in_ring_encoder.transform(atom.GetIsAromatic())
-    mol = atom.GetOwningMol()
     atom_hacceptor =  atom_is_in_ring_encoder.transform(atom.GetIdx() in [i[0] for i in Lipinski._HAcceptors(mol)])
     atom_hdonor = atom_is_in_ring_encoder.transform(atom.GetIdx() in [i[0] for i in Lipinski._HDonors(mol)])
 
