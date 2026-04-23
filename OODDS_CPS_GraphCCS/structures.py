@@ -184,26 +184,6 @@ def mol2graph(mol):
     return G
 
 
-    Parameters
-    ----------
-    mol : rdkit.Chem.rdchem Mol object
-
-
-    Returns
-    -------
-    networkx.classes.graph.Graph
-        Graph that represents the molecule.
-        The bond types are represented as edge weights.
-        The atom types are represented as atom attributes of the nodes.
-    '''
-    G=nx.Graph()
-    for atom in mol.GetAtoms():
-        G.add_node(atom.GetIdx(),atom=atom.GetSymbol())
-    for bond in mol.GetBonds():
-        G.add_edge(bond.GetBeginAtom().GetIdx(),bond.GetEndAtom().GetIdx(),weight=bond.GetBondTypeAsDouble())
-    return G
-
-
 
 def construct_graph(molecular_identifiers):
     """ 
