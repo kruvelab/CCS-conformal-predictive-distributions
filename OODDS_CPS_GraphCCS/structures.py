@@ -159,10 +159,6 @@ def mol2graph(mol):
     '''
     Convert rdkit.Chem.rdchem Mol object to networkx.classes.graph.Graph.
 
-    def mol2graph(mol):
-    '''
-    Convert rdkit.Chem.rdchem Mol object to networkx.classes.graph.Graph.
-
     Code based on:
         - https://github.com/AlBi-HHU/myopic-mces
             - Construction of the networkx.classes.graph.Graph object.
