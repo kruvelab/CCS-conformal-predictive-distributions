@@ -204,7 +204,7 @@ def construct_graph(molecular_identifiers):
         The atom types are represented as atom attributes of the nodes.
     """
     try:
-        graph =  mol2graph(Chem.MolFromSmiles(molecular_identifiers['Absolute SMILES']))
+        graph = mol2graph(Chem.MolFromSmiles(molecular_identifiers['Absolute SMILES']))
     except Exception:
         try:
             graph = mol2graph(Chem.MolFromInchi(molecular_identifiers.InChI))
