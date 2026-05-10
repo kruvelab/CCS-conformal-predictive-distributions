@@ -1,8 +1,9 @@
-# Uncertainty Quantification in Machine-Learning Modeling of Small-Molecule Collision Cross-Sections
+# Candidate Structure Prioritization in Non-Target Screening with Predicted Collision Cross-Sections and Uncertainty Quantification
+
 
 **Authors:** Lucas Ferrando Plo and Anneli Kruve
 
-This repository contains the workflow used to obtain **probabilities** and **Continuous Ranked Probability Scores (CRPSs)** for candidate structures in **non-target screening (NTS)** using collision cross-sections.
+This repository contains the workflow used to obtain **probabilities** and **Continuous Ranked Probability Scores (CRPSs)** for candidate structures in **non-target screening (NTS)** using predicted collision cross-sections.
 
 ## Overview
 
@@ -10,7 +11,7 @@ The pipeline combines:
 
 - [myopic-mces](https://github.com/AlBi-HHU/myopic-mces) for myopic MCES distance calculations
 - [GraphCCS](https://github.com/tingxiecsu/GraphCCS) for collision cross-section prediction
-- the `OODDS_CPS_GraphCCS` workflow for conformal predictive scoring (and out-of-distribution detection)
+- the `OODDS_CPS_GraphCCS` workflow for conformal predictive scoring (and out-of-domain detection)
 
 ## Setup
 
@@ -51,12 +52,12 @@ Open and run the Jupyter notebook `OODDS_CPS_GraphCCS` located in the same folde
 
 ## Output File
 
-After execution, a file named `output.tsv` will be generated in the same folder.
+After execution, a file named `outputMETLINCCS.tsv` or `outputEnvCCS.tsv`, depending on the calibrated chemical space selected, will be generated in the same folder.
 
 This file contains all columns from `input.tsv`, plus the following additional outputs:
 
 - `P^OOD`  
-  Probability that the candidate structure is out-of-distribution
+  Out-of-domain degree for the candidate structure 
 - `CCShat`  
   Predicted CCS for the candidate structure
 - `P^CCS`  
