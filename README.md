@@ -52,7 +52,7 @@ Open and run the Jupyter notebook `OODDS_CPS_GraphCCS` located in the same folde
 
 ## Output File
 
-After execution, a file named `output.tsv` will be generated in the same folder.
+After execution, a file named `outputMETLINCCS.tsv` or `outputEnvCCS.tsv`, depending on the calibrated chemical space selected, will be generated in the same folder.
 
 This file contains all columns from `input.tsv`, plus the following additional outputs:
 
